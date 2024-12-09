@@ -25,3 +25,27 @@ def test_max_mag_zeros():
     test_output = 0
 
     assert max_mag(test_input_df, test_input_colname) == test_output
+
+def test_min_mag_integers():
+    # Test that min_mag function works for integers
+    from lcanalyzer.models import min_mag
+
+    test_input_df = pd.DataFrame(data=[[1, 5, 3], 
+                                       [7, 8, 9], 
+                                       [3, 4, 1]], columns=list("abc"))
+    test_input_colname = "a"
+    test_output = 1
+
+    assert min_mag(test_input_df, test_input_colname) == test_output
+
+def test_mean_mag_integers():
+    # Test that min_mag function works for integers
+    from lcanalyzer.models import mean_mag
+
+    test_input_df = pd.DataFrame(data=[[1, 5, 3], 
+                                       [7, 8, 9], 
+                                       [3, 4, 1]], columns=list("abc"))
+    test_input_colname = "a"
+    test_output = 3
+
+    assert int(mean_mag(test_input_df, test_input_colname)) == test_output
